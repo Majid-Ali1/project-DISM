@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApplication6.Models.ContestPost>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/shared/_MyDashboard.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Contest.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recipe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmitedAt)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contest.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Recipe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubmitedAt)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ContestPostId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ContestPostId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ContestPostId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+﻿@model WebApplication6.Models.ContestPost
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/shared/_MyDashboard.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ContestPost</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Contest.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contest.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Recipe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recipe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmitedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubmitedAt)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ContestPostId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
